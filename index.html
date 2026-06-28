@@ -248,6 +248,13 @@
       grid-column: 1 / -1;
     }
 
+    .control-group:nth-child(3) .segmented {
+      display: grid;
+      grid-auto-flow: row;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      width: 100%;
+    }
+
     .control-label {
       color: var(--muted);
       font-size: 0.78rem;
@@ -353,6 +360,81 @@
       font-size: clamp(1.55rem, 4.5vw, 2.8rem);
       line-height: 1.28;
       text-align: center;
+    }
+
+    .problem.pattern,
+    .problem.group {
+      display: grid;
+      gap: 12px;
+      font-size: 1rem;
+    }
+
+    .equation-line {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: clamp(8px, 1.7vw, 14px);
+      font-size: clamp(2.7rem, 8vw, 5.4rem);
+      font-weight: 900;
+    }
+
+    .pattern-track {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 8px;
+      width: 100%;
+    }
+
+    .pattern-item {
+      display: grid;
+      place-items: center;
+      min-width: 58px;
+      min-height: 58px;
+      border-radius: 8px;
+      color: #21405b;
+      background: rgba(255, 255, 255, 0.88);
+      border: 2px solid rgba(47, 158, 109, 0.24);
+      box-shadow: inset 0 -4px 0 rgba(47, 158, 109, 0.12);
+      font-size: clamp(1.55rem, 5vw, 2.5rem);
+      font-weight: 900;
+    }
+
+    .pattern-item::before {
+      content: attr(data-animal);
+      margin-right: 4px;
+      font-size: 0.82em;
+    }
+
+    .group-scene {
+      display: grid;
+      gap: 10px;
+      justify-items: center;
+    }
+
+    .group-row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 8px;
+    }
+
+    .group-box {
+      display: flex;
+      gap: 3px;
+      padding: 8px 10px;
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.82);
+      border: 2px solid rgba(255, 209, 102, 0.65);
+      box-shadow: inset 0 -4px 0 rgba(123, 79, 0, 0.08);
+      font-size: clamp(1.35rem, 4.2vw, 2.2rem);
+    }
+
+    .group-equation {
+      color: #426079;
+      font-size: clamp(1.45rem, 4vw, 2.25rem);
+      font-weight: 900;
     }
 
     .blank {
@@ -537,6 +619,42 @@
       font-weight: 900;
     }
 
+    .mission-card {
+      display: grid;
+      grid-template-columns: auto minmax(0, 1fr);
+      gap: 10px;
+      align-items: center;
+      margin-bottom: 12px;
+      padding: 10px;
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.68);
+      border: 1px solid rgba(35, 49, 66, 0.1);
+    }
+
+    .mission-icon {
+      display: grid;
+      place-items: center;
+      width: 48px;
+      height: 48px;
+      border-radius: 16px;
+      background: var(--sun);
+      font-size: 2rem;
+      box-shadow: inset 0 -4px 0 rgba(123, 79, 0, 0.12);
+    }
+
+    .mission-title {
+      font-weight: 900;
+      line-height: 1.3;
+    }
+
+    .mission-subtitle {
+      margin-top: 3px;
+      color: var(--muted);
+      font-size: 0.84rem;
+      font-weight: 800;
+      line-height: 1.35;
+    }
+
     .task-goal {
       display: grid;
       grid-template-columns: minmax(70px, 1fr) auto;
@@ -584,6 +702,27 @@
       color: #4c6378;
       font-weight: 800;
       line-height: 1.45;
+    }
+
+    .bonus-row {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 8px;
+      align-items: center;
+      margin-top: 10px;
+      padding: 9px 10px;
+      border-radius: 8px;
+      background: rgba(184, 239, 213, 0.48);
+      color: #25553f;
+      font-weight: 900;
+    }
+
+    .bonus-row span:last-child {
+      color: #fff;
+      background: var(--green);
+      border-radius: 999px;
+      padding: 4px 8px;
+      font-size: 0.82rem;
     }
 
     .checkin-strip {
@@ -637,6 +776,100 @@
       color: #7b4f00;
       background: var(--sun);
       box-shadow: inset 0 -3px 0 rgba(123, 79, 0, 0.12);
+    }
+
+    .collection {
+      margin-top: 16px;
+      padding: 14px;
+      border-radius: 8px;
+      background:
+        linear-gradient(180deg, rgba(234, 247, 255, 0.95) 0 58%, rgba(216, 242, 216, 0.95) 58% 100%);
+      border: 1px solid var(--line);
+      overflow: hidden;
+    }
+
+    .collection-head {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      align-items: center;
+      margin-bottom: 10px;
+      font-weight: 900;
+    }
+
+    .sticker-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 7px;
+      margin-bottom: 10px;
+    }
+
+    .sticker {
+      display: grid;
+      place-items: center;
+      aspect-ratio: 1;
+      border-radius: 8px;
+      color: #a7b3c1;
+      background: rgba(255, 255, 255, 0.62);
+      border: 1px dashed rgba(35, 49, 66, 0.16);
+      font-size: 1.4rem;
+      filter: grayscale(1);
+    }
+
+    .sticker.is-unlocked {
+      color: var(--ink);
+      background: #fff;
+      border-style: solid;
+      filter: none;
+      box-shadow: inset 0 -3px 0 rgba(35, 49, 66, 0.08);
+    }
+
+    .map-scene {
+      position: relative;
+      min-height: 88px;
+      border-radius: 8px;
+      background:
+        radial-gradient(circle at 18% 72%, rgba(47, 158, 109, 0.28), transparent 3.4rem),
+        radial-gradient(circle at 82% 74%, rgba(255, 209, 102, 0.44), transparent 3.2rem),
+        linear-gradient(180deg, rgba(255, 255, 255, 0.54), rgba(255, 255, 255, 0.18));
+      overflow: hidden;
+    }
+
+    .map-animal {
+      position: absolute;
+      display: grid;
+      place-items: center;
+      width: 38px;
+      height: 38px;
+      border-radius: 14px;
+      background: rgba(255, 255, 255, 0.78);
+      box-shadow: 0 8px 18px rgba(40, 61, 91, 0.12);
+      font-size: 1.55rem;
+    }
+
+    .map-animal:nth-child(1) {
+      left: 10px;
+      bottom: 12px;
+    }
+
+    .map-animal:nth-child(2) {
+      left: 50px;
+      bottom: 28px;
+    }
+
+    .map-animal:nth-child(3) {
+      left: 94px;
+      bottom: 13px;
+    }
+
+    .map-animal:nth-child(4) {
+      right: 52px;
+      bottom: 30px;
+    }
+
+    .map-animal:nth-child(5) {
+      right: 10px;
+      bottom: 12px;
     }
 
     .calendar {
@@ -900,6 +1133,18 @@
       animation-delay: 0.34s;
     }
 
+    .reward-animal.cat {
+      left: 22%;
+      bottom: 78px;
+      animation-delay: 0.5s;
+    }
+
+    .reward-animal.fox {
+      right: 22%;
+      bottom: 78px;
+      animation-delay: 0.66s;
+    }
+
     .reward[data-reward="ten"] .reward-animal {
       animation-name: animalParade;
     }
@@ -915,12 +1160,12 @@
       animation: sparkle 4.2s ease-in-out both;
     }
 
-    .reward-star:nth-child(5) {
+    .reward-star:nth-child(7) {
       left: 28%;
       top: 26px;
     }
 
-    .reward-star:nth-child(6) {
+    .reward-star:nth-child(8) {
       right: 30%;
       top: 52px;
       animation-delay: 0.35s;
@@ -1148,11 +1393,11 @@
     <section class="hero" aria-labelledby="page-title">
       <div>
         <h1 id="page-title">佐佐的数学天地</h1>
-        <p>每天完成一点点任务，练普通算式、找缺口、比大小和故事题，让40以内加减法变成小闯关。</p>
+        <p>每天完成一点点动物任务，练20-40以内加减法、找规律、找神秘数和两步故事题。</p>
         <div class="hero-badges" aria-hidden="true">
-          <span>每日任务</span>
-          <span>三档难度</span>
-          <span>答对有奖励</span>
+          <span>20-40以内</span>
+          <span>找规律</span>
+          <span>动物打卡</span>
         </div>
       </div>
       <div class="mascot-wrap" aria-hidden="true">
@@ -1187,6 +1432,9 @@
               <button type="button" data-kind="missing">填空</button>
               <button type="button" data-kind="compare">比大小</button>
               <button type="button" data-kind="story">故事</button>
+              <button type="button" data-kind="chain">两步题</button>
+              <button type="button" data-kind="pattern">规律</button>
+              <button type="button" data-kind="group">分组</button>
             </div>
           </div>
         </div>
@@ -1229,16 +1477,27 @@
         <div class="task-box">
           <div class="task-head">
             <span>今日任务</span>
-            <span id="taskBadge">0/10</span>
+            <span id="taskBadge">0/6</span>
+          </div>
+          <div class="mission-card">
+            <div class="mission-icon" id="missionIcon">🐕</div>
+            <div>
+              <div class="mission-title" id="missionTitle">帮柴犬收集数学星星</div>
+              <div class="mission-subtitle" id="missionSubtitle">完成基础任务，就能解锁今天的动物贴纸。</div>
+            </div>
           </div>
           <div class="task-goal">
-            <input id="taskGoalInput" type="number" inputmode="numeric" min="1" max="50" value="10" aria-label="每日任务题数">
+            <input id="taskGoalInput" type="number" inputmode="numeric" min="5" max="20" value="6" aria-label="每日任务题数">
             <button id="saveTaskButton" type="button">设置</button>
           </div>
           <div class="progress" aria-label="今日任务进度">
             <div class="progress-fill" id="taskProgress"></div>
           </div>
-          <p class="task-text" id="taskText">今天答对 10 题就能点亮奖励。</p>
+          <p class="task-text" id="taskText">今天答对 6 题就能点亮奖励。</p>
+          <div class="bonus-row" id="bonusRow">
+            <span id="bonusText">完成后可挑战额外 5 题</span>
+            <span id="bonusBadge">0/5</span>
+          </div>
           <div class="checkin-strip" aria-label="打卡统计">
             <div class="checkin-pill">
               <b id="todayCheckin">0</b>
@@ -1266,6 +1525,15 @@
             <span id="calendarSummary">0天</span>
           </div>
           <div class="calendar-grid" id="calendarGrid"></div>
+        </div>
+
+        <div class="collection" aria-label="动物贴纸收藏">
+          <div class="collection-head">
+            <span>动物小地图</span>
+            <span id="collectionSummary">0/10</span>
+          </div>
+          <div class="sticker-grid" id="stickerGrid"></div>
+          <div class="map-scene" id="mapScene"></div>
         </div>
 
         <div class="stats">
@@ -1306,6 +1574,8 @@
         <span class="reward-animal dog">🐕</span>
         <span class="reward-animal rabbit">🐰</span>
         <span class="reward-animal panda">🐼</span>
+        <span class="reward-animal cat">🐱</span>
+        <span class="reward-animal fox">🦊</span>
         <span class="reward-star">★</span>
         <span class="reward-star">★</span>
       </div>
@@ -1340,19 +1610,19 @@
 
     const difficultySettings = {
       easy: {
-        max: 10,
+        max: 20,
         label: "启航",
-        kinds: ["normal", "missing", "story"]
+        kinds: ["normal", "missing", "pattern", "story"]
       },
       medium: {
-        max: 20,
+        max: 40,
         label: "巡航",
-        kinds: ["normal", "missing", "compare", "story"]
+        kinds: ["normal", "missing", "compare", "pattern", "chain", "story"]
       },
       hard: {
         max: 40,
         label: "冲刺",
-        kinds: ["normal", "missing", "compare", "story", "chain"]
+        kinds: ["missing", "compare", "pattern", "chain", "group", "story"]
       }
     };
 
@@ -1361,8 +1631,51 @@
       missing: "找缺口",
       compare: "比大小",
       story: "故事题",
-      chain: "连环算式"
+      chain: "两步题",
+      pattern: "规律题",
+      group: "分组加法"
     };
+
+    const missionCatalog = [
+      {
+        icon: "🐕",
+        title: "帮柴犬收集数学星星",
+        subtitle: "完成基础任务，柴犬会把新贴纸带回小地图。"
+      },
+      {
+        icon: "🐰",
+        title: "陪小兔跳过数字荷叶",
+        subtitle: "答对几道题，荷叶路就会亮起来。"
+      },
+      {
+        icon: "🐼",
+        title: "给熊猫修好算式竹桥",
+        subtitle: "找出神秘数，帮熊猫顺利过桥。"
+      },
+      {
+        icon: "🐱",
+        title: "帮小猫整理规律小鱼",
+        subtitle: "看清数字规律，小鱼队伍就排整齐。"
+      },
+      {
+        icon: "🦊",
+        title: "和小狐狸完成森林挑战",
+        subtitle: "完成后可以继续追加 5 题拿额外星星。"
+      }
+    ];
+
+    const stickerCatalog = [
+      { id: "dog", icon: "🐕", name: "柴犬" },
+      { id: "rabbit", icon: "🐰", name: "小兔" },
+      { id: "panda", icon: "🐼", name: "熊猫" },
+      { id: "cat", icon: "🐱", name: "小猫" },
+      { id: "fox", icon: "🦊", name: "狐狸" },
+      { id: "bear", icon: "🐻", name: "小熊" },
+      { id: "tiger", icon: "🐯", name: "老虎" },
+      { id: "frog", icon: "🐸", name: "青蛙" },
+      { id: "koala", icon: "🐨", name: "考拉" },
+      { id: "lion", icon: "🦁", name: "狮子" }
+    ];
 
     const encouragements = [
       "太棒了，柴犬队长给你点头。",
@@ -1381,7 +1694,7 @@
       mode: "mix",
       difficulty: "easy",
       kind: "mix",
-      max: 10,
+      max: 20,
       score: 0,
       streak: 0,
       completed: 0,
@@ -1390,6 +1703,8 @@
       problem: null,
       task: null,
       checkins: [],
+      stickers: [],
+      dailyMission: null,
       streakRewards: {},
       rewardQueue: [],
       rewardActive: false,
@@ -1420,6 +1735,12 @@
       saveTask: document.querySelector("#saveTaskButton"),
       taskProgress: document.querySelector("#taskProgress"),
       taskText: document.querySelector("#taskText"),
+      missionIcon: document.querySelector("#missionIcon"),
+      missionTitle: document.querySelector("#missionTitle"),
+      missionSubtitle: document.querySelector("#missionSubtitle"),
+      bonusRow: document.querySelector("#bonusRow"),
+      bonusText: document.querySelector("#bonusText"),
+      bonusBadge: document.querySelector("#bonusBadge"),
       todayCheckin: document.querySelector("#todayCheckin"),
       currentStreak: document.querySelector("#currentStreak"),
       bestStreak: document.querySelector("#bestStreak"),
@@ -1427,6 +1748,9 @@
       calendarTitle: document.querySelector("#calendarTitle"),
       calendarSummary: document.querySelector("#calendarSummary"),
       calendarGrid: document.querySelector("#calendarGrid"),
+      stickerGrid: document.querySelector("#stickerGrid"),
+      collectionSummary: document.querySelector("#collectionSummary"),
+      mapScene: document.querySelector("#mapScene"),
       reward: document.querySelector("#reward"),
       rewardTitle: document.querySelector("#rewardTitle"),
       rewardText: document.querySelector("#rewardText"),
@@ -1457,22 +1781,52 @@
       return `${year}-${month}-${day}`;
     }
 
+    function stableIndex(seed, size) {
+      let total = 0;
+      for (let i = 0; i < seed.length; i += 1) {
+        total += seed.charCodeAt(i) * (i + 1);
+      }
+      return total % size;
+    }
+
+    function getTodayMission() {
+      return missionCatalog[stableIndex(todayKey(), missionCatalog.length)];
+    }
+
+    function getTodaySticker() {
+      return stickerCatalog[stableIndex(todayKey(), stickerCatalog.length)];
+    }
+
     function loadTask() {
-      const savedGoal = Number(storage.getItem("zuozuoDailyGoal")) || 10;
+      const taskVersion = storage.getItem("zuozuoTaskVersion");
+      const savedGoal = taskVersion === "2" ? Number(storage.getItem("zuozuoDailyGoal")) || 6 : 6;
       const date = todayKey();
-      const saved = JSON.parse(storage.getItem("zuozuoDailyTask") || "null");
+      const saved = taskVersion === "2" ? JSON.parse(storage.getItem("zuozuoDailyTask") || "null") : null;
       state.checkins = JSON.parse(storage.getItem("zuozuoCheckins") || "[]");
+      state.stickers = JSON.parse(storage.getItem("zuozuoStickers") || "[]");
       state.streakRewards = JSON.parse(storage.getItem("zuozuoStreakRewards") || "{}");
+      state.dailyMission = getTodayMission();
 
       if (saved && saved.date === date) {
         state.task = {
           date,
-          goal: saved.goal || savedGoal,
+          goal: saved.goal || Math.min(8, Math.max(5, savedGoal)),
           done: saved.done || 0,
-          rewarded: Boolean(saved.rewarded)
+          rewarded: Boolean(saved.rewarded),
+          bonusDone: saved.bonusDone || 0,
+          bonusRewarded: Boolean(saved.bonusRewarded),
+          stickerAwarded: Boolean(saved.stickerAwarded)
         };
       } else {
-        state.task = { date, goal: savedGoal, done: 0, rewarded: false };
+        state.task = {
+          date,
+          goal: Math.min(8, Math.max(5, savedGoal)),
+          done: 0,
+          rewarded: false,
+          bonusDone: 0,
+          bonusRewarded: false,
+          stickerAwarded: false
+        };
       }
 
       els.taskGoalInput.value = state.task.goal;
@@ -1483,12 +1837,16 @@
       renderTask();
       renderCheckin();
       renderCalendar();
+      renderMission();
+      renderCollection();
     }
 
     function saveTask() {
+      storage.setItem("zuozuoTaskVersion", "2");
       storage.setItem("zuozuoDailyGoal", String(state.task.goal));
       storage.setItem("zuozuoDailyTask", JSON.stringify(state.task));
       storage.setItem("zuozuoCheckins", JSON.stringify(state.checkins));
+      storage.setItem("zuozuoStickers", JSON.stringify(state.stickers));
       storage.setItem("zuozuoStreakRewards", JSON.stringify(state.streakRewards));
     }
 
@@ -1498,25 +1856,28 @@
         : state.mode;
 
       const allowedKinds = difficultySettings[state.difficulty].kinds;
-      const kind = state.kind === "mix"
+      const kind = state.kind === "mix" || !allowedKinds.includes(state.kind)
         ? allowedKinds[randomInt(0, allowedKinds.length - 1)]
         : state.kind;
 
       if (kind === "compare") return makeCompareProblem(op);
       if (kind === "story") return makeStoryProblem(op);
       if (kind === "chain") return makeChainProblem();
+      if (kind === "pattern") return makePatternProblem();
+      if (kind === "group") return makeGroupProblem();
       if (kind === "missing") return makeMissingProblem(op);
       return makeNormalProblem(op);
     }
 
     function makeBaseNumbers(op) {
       if (op === "add") {
-        const left = randomInt(1, state.max - 1);
-        const right = randomInt(1, state.max - left);
+        const target = randomInt(Math.min(11, state.max), state.max);
+        const left = randomInt(Math.max(2, target - 18), target - 1);
+        const right = target - left;
         return { left, right, operator: "+", answer: left + right };
       }
 
-      const left = randomInt(1, state.max);
+      const left = randomInt(Math.min(11, state.max), state.max);
       const right = randomInt(1, left);
       return { left, right, operator: "-", answer: left - right };
     }
@@ -1533,6 +1894,10 @@
     }
 
     function makeMissingProblem(op) {
+      if (state.max >= 40 && Math.random() > 0.25) {
+        return makeTwoStepMissingProblem();
+      }
+
       const base = makeBaseNumbers(op);
       const missingSide = randomInt(0, 1) === 0 ? "left" : "right";
       const answer = base[missingSide];
@@ -1546,6 +1911,100 @@
         answerType: "number",
         prompt: `${missingSide === "left" ? "?" : base.left} ${base.operator} ${missingSide === "right" ? "?" : base.right} = ${base.answer}`,
         html: `${left}<span>${base.operator}</span>${right}<span>=</span><span>${base.answer}</span>`
+      };
+    }
+
+    function makeTwoStepMissingProblem() {
+      const patterns = [
+        () => {
+          const answer = randomInt(8, 20);
+          const a = randomInt(4, 14);
+          const b = randomInt(4, 14);
+          const total = answer + a + b;
+          if (total > state.max) return null;
+          return {
+            answer,
+            prompt: `? + ${a} + ${b} = ${total}`,
+            html: `<span class="blank">?</span><span>+</span><span>${a}</span><span>+</span><span>${b}</span><span>=</span><span>${total}</span>`,
+            hintText: `从 ${total} 往回想：先减 ${b}，再减 ${a}。`
+          };
+        },
+        () => {
+          const a = randomInt(8, 22);
+          const answer = randomInt(3, 14);
+          const b = randomInt(4, 14);
+          const total = a + answer + b;
+          if (total > state.max) return null;
+          return {
+            answer,
+            prompt: `${a} + ? + ${b} = ${total}`,
+            html: `<span>${a}</span><span>+</span><span class="blank">?</span><span>+</span><span>${b}</span><span>=</span><span>${total}</span>`,
+            hintText: `先把 ${a} 和 ${b} 合起来，再看还差多少到 ${total}。`
+          };
+        },
+        () => {
+          const total = randomInt(8, 30);
+          const a = randomInt(6, 18);
+          const b = randomInt(4, 16);
+          const answer = total + b - a;
+          if (answer < 1 || answer > state.max) return null;
+          return {
+            answer,
+            prompt: `${a} + ? - ${b} = ${total}`,
+            html: `<span>${a}</span><span>+</span><span class="blank">?</span><span>−</span><span>${b}</span><span>=</span><span>${total}</span>`,
+            hintText: `先从 ${total} 往回加 ${b}，再减 ${a}。`
+          };
+        },
+        () => {
+          const start = randomInt(22, state.max);
+          const answer = randomInt(3, 16);
+          const b = randomInt(3, 14);
+          const total = start - answer - b;
+          if (total < 0) return null;
+          return {
+            answer,
+            prompt: `${start} - ? - ${b} = ${total}`,
+            html: `<span>${start}</span><span>−</span><span class="blank">?</span><span>−</span><span>${b}</span><span>=</span><span>${total}</span>`,
+            hintText: `从 ${start} 先减到 ${total + b}，中间少掉的就是神秘数。`
+          };
+        },
+        () => {
+          const start = randomInt(18, state.max);
+          const a = randomInt(4, 14);
+          const total = randomInt(8, 32);
+          const answer = total - start + a;
+          if (answer < 1 || answer > 18) return null;
+          return {
+            answer,
+            prompt: `${start} - ${a} + ? = ${total}`,
+            html: `<span>${start}</span><span>−</span><span>${a}</span><span>+</span><span class="blank">?</span><span>=</span><span>${total}</span>`,
+            hintText: `先算 ${start} - ${a}，再看还差多少到 ${total}。`
+          };
+        }
+      ];
+
+      for (let i = 0; i < 20; i += 1) {
+        const candidate = patterns[randomInt(0, patterns.length - 1)]();
+        if (candidate) {
+          return {
+            kind: "missing",
+            answerType: "number",
+            operator: "+",
+            left: 0,
+            right: 0,
+            ...candidate
+          };
+        }
+      }
+
+      const base = makeBaseNumbers(Math.random() > 0.5 ? "add" : "sub");
+      return {
+        ...base,
+        kind: "missing",
+        answer: base.left,
+        answerType: "number",
+        prompt: `? ${base.operator} ${base.right} = ${base.answer}`,
+        html: `<span class="blank">?</span><span>${base.operator}</span><span>${base.right}</span><span>=</span><span>${base.answer}</span>`
       };
     }
 
@@ -1588,23 +2047,108 @@
     }
 
     function makeChainProblem() {
-      const first = randomInt(2, Math.min(24, state.max - 2));
-      const second = randomInt(1, Math.min(12, state.max - first));
-      const subtotal = first + second;
-      const third = randomInt(1, Math.min(12, subtotal));
-      const answer = subtotal - third;
+      const variants = [
+        () => {
+          const first = randomInt(8, Math.min(24, state.max - 8));
+          const second = randomInt(4, Math.min(16, state.max - first));
+          const subtotal = first + second;
+          const third = randomInt(3, Math.min(16, subtotal));
+          return {
+            answer: subtotal - third,
+            prompt: `${first} + ${second} - ${third} = ?`,
+            html: `<span>${first}</span><span>+</span><span>${second}</span><span>−</span><span>${third}</span><span>=</span><span>?</span>`,
+            hintText: `先算 ${first} + ${second}，再减 ${third}。`
+          };
+        },
+        () => {
+          const first = randomInt(18, state.max);
+          const second = randomInt(3, Math.min(16, first));
+          const subtotal = first - second;
+          const third = randomInt(3, Math.min(16, state.max - subtotal));
+          return {
+            answer: subtotal + third,
+            prompt: `${first} - ${second} + ${third} = ?`,
+            html: `<span>${first}</span><span>−</span><span>${second}</span><span>+</span><span>${third}</span><span>=</span><span>?</span>`,
+            hintText: `先算 ${first} - ${second}，再加 ${third}。`
+          };
+        }
+      ];
+      const chain = variants[randomInt(0, variants.length - 1)]();
 
       return {
         kind: "chain",
+        ...chain,
+        answerType: "number",
+        operator: "+"
+      };
+    }
+
+    function makePatternProblem() {
+      const animals = ["🐟", "🐸", "🐌", "🐝", "🦋"];
+      const animal = animals[randomInt(0, animals.length - 1)];
+      const patterns = [
+        () => {
+          const step = randomInt(2, state.max >= 40 ? 5 : 3);
+          const start = randomInt(2, Math.max(2, state.max - step * 5));
+          return Array.from({ length: 6 }, (_, index) => start + step * index);
+        },
+        () => {
+          const step = randomInt(2, state.max >= 40 ? 5 : 3);
+          const start = randomInt(Math.max(18, step * 5), state.max);
+          return Array.from({ length: 6 }, (_, index) => start - step * index).filter((item) => item >= 0);
+        },
+        () => {
+          const firstStart = randomInt(12, state.max);
+          const second = randomInt(2, 8);
+          return [firstStart, second, firstStart - 1, second, firstStart - 2, second];
+        },
+        () => {
+          const a = randomInt(0, 6);
+          const b = a + randomInt(3, 6);
+          return [a, b, a + 2, b + 2, a + 4, b + 4];
+        }
+      ];
+
+      let sequence = [];
+      for (let i = 0; sequence.length < 6 && i < 20; i += 1) {
+        sequence = patterns[randomInt(0, patterns.length - 1)]();
+      }
+      sequence = sequence.slice(0, 6);
+      const answer = sequence[4];
+      const visible = sequence.map((item, index) => index === 4
+        ? `<span class="pattern-item" data-animal="${animal}"><span class="blank">?</span></span>`
+        : `<span class="pattern-item" data-animal="${animal}">${item}</span>`
+      ).join("");
+
+      return {
+        kind: "pattern",
         answer,
         answerType: "number",
-        left: first,
-        right: second,
-        third,
         operator: "+",
-        prompt: `${first} + ${second} - ${third} = ?`,
-        html: `<span>${first}</span><span>+</span><span>${second}</span><span>−</span><span>${third}</span><span>=</span><span>?</span>`,
-        hintText: `先算 ${first} + ${second}，再减 ${third}。`
+        prompt: `${sequence.slice(0, 4).join(", ")}, ?`,
+        html: `<div class="pattern-track">${visible}</div>`,
+        hintText: `看看前面的数字每次怎么变，再填第 5 个位置。完整规律会到 ${sequence[5]}。`
+      };
+    }
+
+    function makeGroupProblem() {
+      const groupCount = randomInt(3, 5);
+      const each = randomInt(3, Math.min(8, Math.floor(state.max / groupCount)));
+      const answer = groupCount * each;
+      const item = ["🍓", "🍬", "⭐", "🫐", "🍪"][randomInt(0, 4)];
+      const groups = Array.from({ length: groupCount }, () => (
+        `<span class="group-box">${Array.from({ length: each }, () => `<span>${item}</span>`).join("")}</span>`
+      )).join("");
+      const equation = Array.from({ length: groupCount }, () => each).join(" + ");
+
+      return {
+        kind: "group",
+        answer,
+        answerType: "number",
+        operator: "+",
+        prompt: `${equation} = ?`,
+        html: `<div class="group-scene"><div class="group-row">${groups}</div><div class="group-equation">${equation} = ?</div></div>`,
+        hintText: `这里有 ${groupCount} 组，每组 ${each} 个，也就是 ${equation}。`
       };
     }
 
@@ -1621,7 +2165,7 @@
       state.problem = next;
       state.attempts = 0;
       els.typePill.textContent = `${difficultySettings[state.difficulty].label} · ${kindLabels[next.kind]}`;
-      els.problemText.className = `problem ${next.kind === "story" ? "story" : ""}`;
+      els.problemText.className = `problem ${["story", "pattern", "group"].includes(next.kind) ? next.kind : ""}`;
       els.problemText.innerHTML = next.html;
       els.input.value = "";
       els.input.setAttribute("inputmode", next.answerType === "symbol" ? "text" : "numeric");
@@ -1673,9 +2217,52 @@
       const percent = Math.round((done / state.task.goal) * 100);
       els.taskBadge.textContent = `${done}/${state.task.goal}`;
       els.taskProgress.style.width = `${percent}%`;
+      const bonusDone = Math.min(state.task.bonusDone, 5);
+      els.bonusBadge.textContent = `${bonusDone}/5`;
       els.taskText.textContent = done >= state.task.goal
-        ? "今日任务完成，日历已经打卡。"
+        ? "基础任务完成，今天的动物贴纸已经加入小地图。"
         : `今天再答对 ${state.task.goal - done} 题，就能完成打卡。`;
+      els.bonusText.textContent = done >= state.task.goal
+        ? (bonusDone >= 5 ? "追加挑战完成，额外星星到手。" : "还可以追加挑战，继续答对 5 题。")
+        : "基础任务完成后，会开启额外 5 题挑战。";
+    }
+
+    function renderMission() {
+      els.missionIcon.textContent = state.dailyMission.icon;
+      els.missionTitle.textContent = state.dailyMission.title;
+      els.missionSubtitle.textContent = state.dailyMission.subtitle;
+    }
+
+    function unlockTodaySticker() {
+      if (state.task.stickerAwarded) return null;
+      const sticker = getTodaySticker();
+      if (!state.stickers.includes(sticker.id)) {
+        state.stickers.push(sticker.id);
+      }
+      state.task.stickerAwarded = true;
+      renderCollection();
+      return sticker;
+    }
+
+    function renderCollection() {
+      const unlocked = new Set(state.stickers);
+      els.collectionSummary.textContent = `${unlocked.size}/${stickerCatalog.length}`;
+      els.stickerGrid.innerHTML = "";
+      stickerCatalog.forEach((sticker) => {
+        const item = document.createElement("div");
+        item.className = `sticker ${unlocked.has(sticker.id) ? "is-unlocked" : ""}`;
+        item.textContent = unlocked.has(sticker.id) ? sticker.icon : "?";
+        item.title = unlocked.has(sticker.id) ? sticker.name : "待解锁";
+        els.stickerGrid.appendChild(item);
+      });
+
+      els.mapScene.innerHTML = "";
+      stickerCatalog.filter((sticker) => unlocked.has(sticker.id)).slice(0, 5).forEach((sticker) => {
+        const animal = document.createElement("span");
+        animal.className = "map-animal";
+        animal.textContent = sticker.icon;
+        els.mapScene.appendChild(animal);
+      });
     }
 
     function getCheckinSet() {
@@ -1839,7 +2426,11 @@
         state.score += points;
         state.streak += 1;
         state.completed += 1;
-        state.task.done += 1;
+        if (state.task.done < state.task.goal) {
+          state.task.done += 1;
+        } else if (state.task.bonusDone < 5) {
+          state.task.bonusDone += 1;
+        }
         remember(true, typed);
         renderStats();
         renderTask();
@@ -1848,6 +2439,7 @@
         els.feedback.textContent = `${pickEncouragement()} 加 ${points} 分。`;
         maybeShowPracticeReward();
         maybeShowReward();
+        maybeShowBonusReward();
         window.setTimeout(nextProblem, 700);
         return;
       }
@@ -1876,6 +2468,7 @@
       if (state.task.done < state.task.goal || state.task.rewarded) return;
       state.task.rewarded = true;
       const streak = markTodayComplete();
+      const sticker = unlockTodaySticker();
       saveTask();
       renderTask();
       const milestone = [10, 5, 3].find((days) => streak >= days && !state.streakRewards[`${todayKey()}-${days}`]);
@@ -1885,12 +2478,19 @@
         showReward("streak", milestone);
         return;
       }
-      showReward("daily");
+      showReward("daily", 0, sticker);
     }
 
-    function showReward(type = "daily", days = 0) {
+    function maybeShowBonusReward() {
+      if (state.task.done < state.task.goal || state.task.bonusDone < 5 || state.task.bonusRewarded) return;
+      state.task.bonusRewarded = true;
+      saveTask();
+      showReward("bonus");
+    }
+
+    function showReward(type = "daily", days = 0, sticker = null) {
       if (state.rewardActive) {
-        state.rewardQueue.push({ type, days });
+        state.rewardQueue.push({ type, days, sticker });
         return;
       }
 
@@ -1911,9 +2511,14 @@
       } else if (type === "combo") {
         els.rewardTitle.textContent = "连续答对5道题！";
         els.rewardText.textContent = "小动物们一起蹦蹦跳跳，庆祝佐佐的连对能量满格。";
+      } else if (type === "bonus") {
+        els.rewardTitle.textContent = "追加挑战完成！";
+        els.rewardText.textContent = "森林小地图亮起额外星星，佐佐今天还多完成了 5 题。";
       } else {
         els.rewardTitle.textContent = "今日任务完成！";
-        els.rewardText.textContent = "柴犬、兔子和熊猫一起跳舞，庆祝佐佐完成今天的数学打卡。";
+        els.rewardText.textContent = sticker
+          ? `${sticker.name}贴纸加入小地图，柴犬和朋友们一起庆祝今天的数学打卡。`
+          : "柴犬、兔子和熊猫一起跳舞，庆祝佐佐完成今天的数学打卡。";
       }
 
       els.reward.classList.add("is-visible");
@@ -1949,7 +2554,7 @@
       const p = state.problem;
       els.hintDots.innerHTML = "";
 
-      if (p.kind === "compare" || p.kind === "chain") {
+      if (p.hintText || ["compare", "chain", "pattern", "group"].includes(p.kind)) {
         els.hintTitle.textContent = p.hintText;
         els.hintBox.classList.add("is-visible");
         return;
@@ -1986,13 +2591,13 @@
       state.rewardActive = false;
       const nextReward = state.rewardQueue.shift();
       if (nextReward) {
-        window.setTimeout(() => showReward(nextReward.type, nextReward.days), 120);
+        window.setTimeout(() => showReward(nextReward.type, nextReward.days, nextReward.sticker), 120);
         return;
       }
       els.input.focus();
     });
     els.saveTask.addEventListener("click", () => {
-      const nextGoal = Math.max(1, Math.min(50, Number(els.taskGoalInput.value) || 10));
+      const nextGoal = Math.max(5, Math.min(20, Number(els.taskGoalInput.value) || 6));
       state.task.goal = nextGoal;
       state.task.rewarded = state.task.done >= nextGoal ? state.task.rewarded : false;
       els.taskGoalInput.value = nextGoal;
