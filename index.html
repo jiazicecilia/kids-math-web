@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>佐佐的20以内加减法</title>
+  <title>佐佐的40以内加减法</title>
   <style>
     :root {
       --ink: #233142;
@@ -1148,7 +1148,7 @@
     <section class="hero" aria-labelledby="page-title">
       <div>
         <h1 id="page-title">佐佐的数学天地</h1>
-        <p>每天完成一点点任务，练普通算式、找缺口、比大小和故事题，让20以内加减法变成小闯关。</p>
+        <p>每天完成一点点任务，练普通算式、找缺口、比大小和故事题，让40以内加减法变成小闯关。</p>
         <div class="hero-badges" aria-hidden="true">
           <span>每日任务</span>
           <span>三档难度</span>
@@ -1350,7 +1350,7 @@
         kinds: ["normal", "missing", "compare", "story"]
       },
       hard: {
-        max: 20,
+        max: 40,
         label: "冲刺",
         kinds: ["normal", "missing", "compare", "story", "chain"]
       }
@@ -1588,10 +1588,10 @@
     }
 
     function makeChainProblem() {
-      const first = randomInt(2, 12);
-      const second = randomInt(1, Math.min(7, 20 - first));
+      const first = randomInt(2, Math.min(24, state.max - 2));
+      const second = randomInt(1, Math.min(12, state.max - first));
       const subtotal = first + second;
-      const third = randomInt(1, Math.min(8, subtotal));
+      const third = randomInt(1, Math.min(12, subtotal));
       const answer = subtotal - third;
 
       return {
