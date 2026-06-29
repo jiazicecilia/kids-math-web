@@ -1429,7 +1429,7 @@
             <div class="segmented" aria-label="选择题型">
               <button type="button" class="is-active" data-kind="mix">随机</button>
               <button type="button" data-kind="normal">算式</button>
-              <button type="button" data-kind="missing">填空</button>
+              <button type="button" data-kind="missing">找缺口</button>
               <button type="button" data-kind="compare">比大小</button>
               <button type="button" data-kind="story">故事</button>
               <button type="button" data-kind="chain">两步题</button>
@@ -1856,7 +1856,7 @@
         : state.mode;
 
       const allowedKinds = difficultySettings[state.difficulty].kinds;
-      const kind = state.kind === "mix" || !allowedKinds.includes(state.kind)
+      const kind = state.kind === "mix"
         ? allowedKinds[randomInt(0, allowedKinds.length - 1)]
         : state.kind;
 
